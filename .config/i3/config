@@ -204,3 +204,4 @@ bar {
 
 # Display Wallpaper
 exec_always --no-startup-id feh ~/Pictures/Wallpapers/wp5204102.jpg --bg-fill
+exec --no-startup-id nextcloud
