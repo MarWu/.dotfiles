@@ -194,6 +194,7 @@ client.focused #4c7899 #285577 #ffffff #2e9ef4   #ffffff
 ### Screen brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+bindsym Ctrl+Shift+l exec --no-startup-id i3lock -i ~/Pictures/Wallpapers/1023439.png
 
 ## Touchpad tap to click
 exec_always --no-startup-id xinput set-prop 12 344 1
