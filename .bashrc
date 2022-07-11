@@ -17,3 +17,4 @@ fi
 #eval "$(starship init bash)"
 exec fish;
 exit;
+. "$HOME/.cargo/env"
