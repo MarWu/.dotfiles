@@ -1,4 +1,19 @@
 # Font configuration
 font:
-  # Point size
-  size: 9.0
+  normal:
+    family: Comic Mono
+    style: Regular
+
+  bold:
+    family: Comic Mono
+    style: Bold
+
+  italic:
+    family: Iosevka Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: Iosevka Nerd Font
+    style: Bold Italic
+
+  size: 7.0
