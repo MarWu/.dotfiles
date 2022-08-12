@@ -30,7 +30,7 @@ local filetype = {
 
 local location = {
   "location",
-  padding = 0,
+  padding = 1,
 }
 
 local spaces = function()
