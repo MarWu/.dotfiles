@@ -15,6 +15,6 @@ if [ "$tty" = "/dev/tty1" ]; then
 fi
 
 #eval "$(starship init bash)"
-exec fish;
-exit;
+# exec fish;
+# exit;
 . "$HOME/.cargo/env"

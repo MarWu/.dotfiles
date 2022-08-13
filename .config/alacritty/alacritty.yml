@@ -1,3 +1,7 @@
+# Shell configuration
+shell:
+  program: /bin/fish
+
 # Font configuration
 font:
   normal:
