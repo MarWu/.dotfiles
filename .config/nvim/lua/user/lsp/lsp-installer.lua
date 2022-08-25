@@ -12,6 +12,7 @@ local servers = {
   "bashls",
   "jsonls",
   "yamlls",
+  "rust_analyzer",
 }
 
 lsp_installer.setup()
@@ -39,5 +40,40 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
   end
 
+  if server == "rust_analyzer" then
+    local keymap = vim.keymap.set
+    local key_opts = {silent = true }
+
+    keymap("n", "<leader>rha", "<cmd>RustHoverActions<Cr>", key_opts)
+    keymap("n", "<leader>rhr", "<cmd>RustHoverRange<Cr>", key_opts)
+
+    require("rust-tools").setup {
+        tools = {
+                on_initialized = function()
+                vim.cmd [[
+                    autocmd BufEnter,CursorHold,InsertLeave,BufWritePost *.rs silent! lua vim.lsp.codelens.refresh()
+                ]]
+                end,
+            },
+            server = {
+                on_attach = require("user.lsp.handlers").on_attach,
+                capabilities = require("user.lsp.handlers").capabilities,
+                settings = {
+                    ["rust-analyzer"] = {
+                        lens = {
+                            enable = true,
+                        },
+                        checkOnSave = {
+                            command = "clippy",
+                        },
+                    },
+                },
+            },
+        }
+
+        goto continue
+  end
+
   lspconfig[server].setup(opts)
+    ::continue::
 end
