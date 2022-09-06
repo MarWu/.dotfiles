@@ -23,7 +23,7 @@ M.setup = function()
   end
 
   local config = {
-    virtual_text = true, -- disable virtual text
+    virtual_text = false, -- disable virtual text -- enabled -- disabled again because of lsp-lines
     signs = {
       active = signs, -- show signs
     },
