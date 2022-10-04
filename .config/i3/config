@@ -180,12 +180,17 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 ## Custom configs
-### Window border/title
-#default_border none
-default_border pixel 1
+### Window border/title (Setting to 0 requried for gaps)
+for_window [class=".*"] border pixel 1
+# default_border pixel 1
 
 ## Smart screen edge borders
 #hide_edge_borders vertical
+smart_borders on
+
+## Borders
+# gaps inner 10
+gaps top 20
 
 ## Colors
 client.focused #4c7899 #285577 #ffffff #2e9ef4   #ffffff
@@ -213,12 +218,14 @@ exec_always --no-startup-id alacritty --class ttrm
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
+# bar {
   # status_command i3status
-  mode invisible
-  status_command polybar
+  # mode invisible
+  # status_command polybar
   # tray_output primary
-}
+# }
+exec_always killall -q polybar
+exec_always --no-startup-id polybar
 
 # Display Wallpaper
 exec_always --no-startup-id feh ~/Pictures/Wallpapers/wp5204102.jpg --bg-fill
