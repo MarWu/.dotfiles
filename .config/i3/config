@@ -224,8 +224,9 @@ exec_always --no-startup-id alacritty --class ttrm
   # status_command polybar
   # tray_output primary
 # }
-exec_always killall -q polybar
-exec_always --no-startup-id polybar
+# exec_always --no-startup-id killall -q polybar
+# exec_always --no-startup-id polybar
+exec_always --no-startup-id ~/.config/polybar/polybar_start.sh
 
 # Display Wallpaper
 exec_always --no-startup-id feh ~/Pictures/Wallpapers/wp5204102.jpg --bg-fill
