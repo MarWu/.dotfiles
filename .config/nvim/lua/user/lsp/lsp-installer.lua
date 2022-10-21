@@ -13,6 +13,7 @@ local servers = {
 	"jsonls",
 	"yamlls",
 	"rust_analyzer",
+    "clangd",   --[[ Generate compile_commands.json for cmake proj for indexing: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ]]
 }
 
 lsp_installer.setup()
