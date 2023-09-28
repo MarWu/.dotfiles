@@ -19,3 +19,4 @@ fi
 # exec fish;
 # exit;
 . "$HOME/.cargo/env"
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
