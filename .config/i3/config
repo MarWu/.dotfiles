@@ -200,11 +200,13 @@ client.focused #4c7899 #285577 #ffffff #2e9ef4   #ffffff
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym Ctrl+Shift+l exec --no-startup-id i3lock -i ~/Pictures/Wallpapers/1023439.png
+bindsym $mod+Shift+Return exec --no-startup-id alacritty
 
 ## Touchpad tap to click
-exec_always --no-startup-id xinput set-prop 12 335 1
+# exec_always --no-startup-id xinput set-prop 12 335 1
+exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
 ## Touchpad high resolution scroll
-exec_always --no-startup-id xinput set-prop 12 344 1
+# exec_always --no-startup-id xinput set-prop 12 344 1
 
 ## Scratchpads
 for_window [instance="kpscratch"] move window to scratchpad
@@ -232,3 +234,5 @@ exec_always --no-startup-id ~/.config/polybar/polybar_start.sh
 exec_always --no-startup-id feh ~/Pictures/Wallpapers/wp5204102.jpg --bg-fill
 # Start Nextcloud
 # exec --no-startup-id nextcloud
+# Start birdtray    # TEST IF IT ACTUALLY WORKS ON REBOOT
+exec --no-startup-id birdtray
